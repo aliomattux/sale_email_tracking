@@ -1,0 +1,15 @@
+<openerp>
+    <data>
+        <record id="view_sale_email_form" model="ir.ui.view">
+            <field name="name">Sale Order Email Form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form" />
+            <field name="arch" type="xml">
+		<button string="Send by Email" position="replace" />
+                <button name="action_quotation_send" position="replace" >
+                    <button name="send_one_sale_order_email" type="object" string="Email Order" />
+                </button>
+            </field>
+        </record>
+    </data>
+</openerp>
