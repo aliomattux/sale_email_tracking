@@ -51,13 +51,11 @@ class SaleEmailReport(osv.osv_memory):
 	    return False
 	    
         sender = 'support@bitsoflace.com'
-#	receivers = [email]
-	receivers = ['kyle.waid@gcotech.com']
+	receivers = [email, 'support@bitsoflace.com']
 	msg = MIMEMultipart()
 	msg['Subject'] = 'Your Order: %s ' % sale.name
 	msg['From'] = "Customer Service <support@bitsoflace.com>"
-#	msg['To'] = "%s <%s>" % (name, email)
-	msg['To'] = "%s <%s>" % ('Kyle Waid', 'kyle.waid@gcotech.com')
+	msg['To'] = "%s <%s>" % (name, email)
 	body = html
 	content = MIMEText(body, 'html')
 	msg.attach(content)
